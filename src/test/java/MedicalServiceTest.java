@@ -44,7 +44,7 @@ public class MedicalServiceTest {
         BloodPressure currentPressure = new BloodPressure(125, 78);
         medicalService.checkBloodPressure("1", currentPressure);
 
-        Mockito.verify(sendAlertService, Mockito.times(0)).send("Warning, patient with id: 1, need help");
+        Mockito.verify(sendAlertService, Mockito.never()).send("Warning, patient with id: 1, need help");
     }
 
     @Test
@@ -52,7 +52,7 @@ public class MedicalServiceTest {
         BigDecimal currentTemperature = new BigDecimal("36.6");
         medicalService.checkTemperature("1", currentTemperature);
 
-        Mockito.verify(sendAlertService, Mockito.times(0)).send("Warning, patient with id: 1, need help");
+        Mockito.verify(sendAlertService, Mockito.never()).send("Warning, patient with id: 1, need help");
 
     }
 
